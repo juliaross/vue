@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Projects</title>
+<link href="https://fonts.googleapis.com/css?family=Oswald:300,400,500,600&display=swap" rel="stylesheet">
+<link rel="stylesheet" type="text/css" href="css/main.css"/>
+
+<body>
+  <div class="wrapper">
+<h1>To do list</h1>
+
+<div id="app" class="block">
+
+  <input type="text" v-model="message" v-on:keyup.13="onClick" placeholder="+ add to do">
+  <!-- <ul>
+    <li>{{ message }}</li>
+    <li v-for="item in list" v-bind:class="{ 'active': item.status }"> {{ item.name }}</li>
+    <li>{{ message }}</li>
+  </ul> -->
+
+  <ul class="list">
+    <li class="item" v-for="item in list" v-bind:class="{ 'active': item.status }">
+      <span>{{ item.name }}</span>
+      <div class="btn-wrap">
+        <!-- <button v-on:Click='doneItem'>Done</button> -->
+        <button v-on:Click='deleteItem'>Del</button>
+      </div>
+    </li>
+  </ul>
+</div>
+
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/vue"></script>
+<script type="text/javascript" src="js/main.js"></script>
+</body>
+</html>
